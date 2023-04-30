@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:meu_app/functions/utils.dart' as utils;
 
 void main(List<String> arguments) {
   print("Bem vindos a nossa calculadora!");
