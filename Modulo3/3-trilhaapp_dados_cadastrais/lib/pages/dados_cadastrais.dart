@@ -15,14 +15,13 @@ class _DadosCadastraisPageState extends State<DadosCadastraisPage> {
   var dataNacimentoController = TextEditingController(text: "");
   DateTime? dataNascimento;
   var nivelRepository = NivelRepository();
-  var linguagensRepository = LinguagensRepository();
   var niveis = [];
+  var nivelSelecionado = "";
+  var linguagensRepository = LinguagensRepository();
   var linguagens = [];
   var linguagensSelecionadas = [];
-  var nivelSelecionado = "";
   double salarioEscolhido = 0;
   int tempoExperiencia = 0;
-
   bool salvando = false;
 
   @override
@@ -36,8 +35,8 @@ class _DadosCadastraisPageState extends State<DadosCadastraisPage> {
     var itens = <DropdownMenuItem<int>>[];
     for (var i = 0; i <= quantidadeMaxima; i++) {
       itens.add(DropdownMenuItem(
-        child: Text(i.toString()),
         value: i,
+        child: Text(i.toString()),
       ));
     }
     return itens;
@@ -64,7 +63,7 @@ class _DadosCadastraisPageState extends State<DadosCadastraisPage> {
                       onTap: () async {
                         var data = await showDatePicker(
                             context: context,
-                            initialDate: DateTime(2000, 1, 1),
+                            initialDate: DateTime.now(),
                             firstDate: DateTime(1900, 5, 20),
                             lastDate: DateTime(2023, 10, 23));
                         if (data != null) {
@@ -82,7 +81,7 @@ class _DadosCadastraisPageState extends State<DadosCadastraisPage> {
                               value: nivel.toString(),
                               groupValue: nivelSelecionado,
                               onChanged: (value) {
-                                print(value);
+                                debugPrint(value.toString());
                                 setState(() {
                                   nivelSelecionado = value.toString();
                                 });
@@ -111,7 +110,7 @@ class _DadosCadastraisPageState extends State<DadosCadastraisPage> {
                   const TextLabel(texto: "Tempo de experiência"),
                   DropdownButton(
                       value: tempoExperiencia,
-                      isExpanded: true,
+                      isExpanded: false,
                       items: returnItens(50),
                       onChanged: (value) {
                         setState(() {
@@ -123,7 +122,7 @@ class _DadosCadastraisPageState extends State<DadosCadastraisPage> {
                           "Pretenção Salarial. R\$ ${salarioEscolhido.round().toString()}"),
                   Slider(
                       min: 0,
-                      max: 10000,
+                      max: 50000,
                       value: salarioEscolhido,
                       onChanged: (double value) {
                         setState(() {
@@ -171,7 +170,6 @@ class _DadosCadastraisPageState extends State<DadosCadastraisPage> {
                                 "A pretenção salarial deve ser maior que 0")));
                         return;
                       }
-
                       setState(() {
                         salvando = true;
                       });
@@ -185,7 +183,7 @@ class _DadosCadastraisPageState extends State<DadosCadastraisPage> {
                         Navigator.pop(context);
                       });
                     },
-                    child: Text("Salvar"),
+                    child: const Text("Salvar"),
                   ),
                 ],
               ),
