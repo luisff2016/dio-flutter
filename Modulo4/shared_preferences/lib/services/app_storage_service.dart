@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types, constant_identifier_names
+
 import 'package:shared_preferences/shared_preferences.dart';
 
 enum STORAGE_CHAVES {
@@ -16,6 +18,7 @@ enum STORAGE_CHAVES {
 }
 
 class AppStorageService {
+  
   Future<void> setQuantidadeCliques(int value) async {
     await _setInt(STORAGE_CHAVES.CHAVE_QUANTIDADE_CLIQUES.toString(), value);
   }

@@ -47,8 +47,8 @@ class _DadosCadastraisHivePageState extends State<DadosCadastraisHivePage> {
     var itens = <DropdownMenuItem<int>>[];
     for (var i = 0; i <= quantidadeMaxima; i++) {
       itens.add(DropdownMenuItem(
-        child: Text(i.toString()),
         value: i,
+        child: Text(i.toString()),
       ));
     }
     return itens;
@@ -94,7 +94,7 @@ class _DadosCadastraisHivePageState extends State<DadosCadastraisHivePage> {
                               value: nivel.toString(),
                               groupValue: dadosCadastraisModel.nivelExperiencia,
                               onChanged: (value) {
-                                print(value);
+                                //print(value);
                                 setState(() {
                                   dadosCadastraisModel.nivelExperiencia =
                                       value.toString();

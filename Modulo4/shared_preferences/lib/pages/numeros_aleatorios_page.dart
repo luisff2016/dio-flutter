@@ -17,7 +17,6 @@ class _NumerosAleatoriosPageState extends State<NumerosAleatoriosPage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     carregarDados();
   }
@@ -41,16 +40,18 @@ class _NumerosAleatoriosPageState extends State<NumerosAleatoriosPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
+                // ignore: unnecessary_null_comparison
                 numeroGerado == null
                     ? "Nenhum número gerado"
                     : numeroGerado.toString(),
-                style: TextStyle(fontSize: 22),
+                style: const TextStyle(fontSize: 24),
               ),
               Text(
+                // ignore: unnecessary_null_comparison
                 quantidadeCliques == null
                     ? "Nenhum clique efetuado"
                     : quantidadeCliques.toString(),
-                style: TextStyle(fontSize: 22),
+                style: const TextStyle(fontSize: 22),
               )
             ],
           ),
