@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:intl/intl.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:trilhaapp/pages/auto_size_text/auto_size_text_page.dart';
@@ -31,8 +30,8 @@ class CustonDrawer extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 width: double.infinity,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     FaIcon(
                       FontAwesomeIcons.internetExplorer,
                       color: Colors.blue,
@@ -57,8 +56,8 @@ class CustonDrawer extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 width: double.infinity,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     FaIcon(
                       FontAwesomeIcons.mapLocationDot,
                       color: Colors.blue,
@@ -84,8 +83,8 @@ class CustonDrawer extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 width: double.infinity,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     FaIcon(
                       FontAwesomeIcons.shareNodes,
                       color: Colors.blue,
@@ -112,8 +111,8 @@ class CustonDrawer extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 width: double.infinity,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     FaIcon(
                       FontAwesomeIcons.percent,
                       color: Colors.blue,
@@ -126,8 +125,10 @@ class CustonDrawer extends StatelessWidget {
                   ],
                 )),
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (_) => PercentIndicatorPage()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (_) => const PercentIndicatorPage()));
             },
           ),
           const Divider(),
@@ -139,8 +140,8 @@ class CustonDrawer extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 width: double.infinity,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     FaIcon(
                       FontAwesomeIcons.batteryHalf,
                       color: Colors.blue,
@@ -153,8 +154,8 @@ class CustonDrawer extends StatelessWidget {
                   ],
                 )),
             onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => BatteryPage()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const BatteryPage()));
             },
           ),
           const Divider(),
@@ -166,8 +167,8 @@ class CustonDrawer extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 width: double.infinity,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     FaIcon(
                       FontAwesomeIcons.paperclip,
                       color: Colors.blue,
@@ -181,7 +182,7 @@ class CustonDrawer extends StatelessWidget {
                 )),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (_) => AutoSizeTextPage()));
+                  MaterialPageRoute(builder: (_) => const AutoSizeTextPage()));
             },
           ),
           const Divider(),
@@ -193,8 +194,8 @@ class CustonDrawer extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 width: double.infinity,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     FaIcon(
                       FontAwesomeIcons.home,
                       color: Colors.blue,
@@ -229,8 +230,8 @@ class CustonDrawer extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 width: double.infinity,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     FaIcon(
                       FontAwesomeIcons.flag,
                       color: Colors.blue,
@@ -244,9 +245,9 @@ class CustonDrawer extends StatelessWidget {
                 )),
             onTap: () {
               if (context.locale.toString() == "pt_BR") {
-                context.setLocale(Locale('en', 'US'));
+                context.setLocale(const Locale('en', 'US'));
               } else {
-                context.setLocale(Locale('pt', 'BR'));
+                context.setLocale(const Locale('pt', 'BR'));
               }
               Navigator.pop(context);
             },
@@ -260,8 +261,8 @@ class CustonDrawer extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 width: double.infinity,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     FaIcon(
                       FontAwesomeIcons.flag,
                       color: Colors.blue,
@@ -292,8 +293,8 @@ class CustonDrawer extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 width: double.infinity,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     FaIcon(
                       FontAwesomeIcons.appStoreIos,
                       color: Colors.blue,
@@ -330,8 +331,8 @@ class CustonDrawer extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 width: double.infinity,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     FaIcon(
                       FontAwesomeIcons.robot,
                       color: Colors.blue,
@@ -367,8 +368,8 @@ class CustonDrawer extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 width: double.infinity,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     FaIcon(
                       FontAwesomeIcons.wifi,
                       color: Colors.blue,
@@ -381,8 +382,10 @@ class CustonDrawer extends StatelessWidget {
                   ],
                 )),
             onTap: () async {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (_) => ConnectivityPlusPage()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (_) => const ConnectivityPlusPage()));
             },
           ),
           const Divider(),
@@ -394,8 +397,8 @@ class CustonDrawer extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 width: double.infinity,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     FaIcon(
                       FontAwesomeIcons.mapPin,
                       color: Colors.blue,
@@ -408,8 +411,8 @@ class CustonDrawer extends StatelessWidget {
                   ],
                 )),
             onTap: () async {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => GeolocatorPage()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const GeolocatorPage()));
             },
           ),
           const Divider(),
@@ -421,8 +424,8 @@ class CustonDrawer extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 width: double.infinity,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     FaIcon(
                       FontAwesomeIcons.qrcode,
                       color: Colors.blue,
@@ -435,8 +438,8 @@ class CustonDrawer extends StatelessWidget {
                   ],
                 )),
             onTap: () async {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => QrCodePage()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const QrCodePage()));
             },
           ),
           const Divider(),
@@ -448,8 +451,8 @@ class CustonDrawer extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 width: double.infinity,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     FaIcon(
                       FontAwesomeIcons.camera,
                       color: Colors.blue,
@@ -462,8 +465,8 @@ class CustonDrawer extends StatelessWidget {
                   ],
                 )),
             onTap: () async {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => CameraPage()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const CameraPage()));
             },
           ),
         ].reversed.toList(),

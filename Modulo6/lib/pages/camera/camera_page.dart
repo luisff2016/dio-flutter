@@ -61,11 +61,11 @@ class _CameraPageState extends State<CameraPage> {
                       return Wrap(
                         children: [
                           ListTile(
-                            leading: FaIcon(FontAwesomeIcons.camera),
-                            title: Text("Camera"),
+                            leading: const FaIcon(FontAwesomeIcons.camera),
+                            title: const Text("Camera"),
                             onTap: () async {
-                              final ImagePicker _picker = ImagePicker();
-                              photo = await _picker.pickImage(
+                              final ImagePicker picker = ImagePicker();
+                              photo = await picker.pickImage(
                                   source: ImageSource.camera);
                               if (photo != null) {
                                 String path = (await path_provider
@@ -82,11 +82,11 @@ class _CameraPageState extends State<CameraPage> {
                             },
                           ),
                           ListTile(
-                              leading: FaIcon(FontAwesomeIcons.images),
-                              title: Text("Galeria"),
+                              leading: const FaIcon(FontAwesomeIcons.images),
+                              title: const Text("Galeria"),
                               onTap: () async {
-                                final ImagePicker _picker = ImagePicker();
-                                photo = await _picker.pickImage(
+                                final ImagePicker picker = ImagePicker();
+                                photo = await picker.pickImage(
                                     source: ImageSource.gallery);
                                 Navigator.pop(context);
 
@@ -96,7 +96,7 @@ class _CameraPageState extends State<CameraPage> {
                       );
                     });
               },
-              child: Text("Camera")),
+              child: const Text("Camera")),
           photo != null
               ? Container(
                   child: Image.file(File(photo!.path)),
@@ -105,7 +105,7 @@ class _CameraPageState extends State<CameraPage> {
         ],
       ),
       appBar: AppBar(
-        title: Text("Camera"),
+        title: const Text("Camera"),
       ),
     ));
   }

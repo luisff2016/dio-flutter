@@ -35,7 +35,7 @@ class _ConnectivityPlusPageState extends State<ConnectivityPlusPage> {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
-        title: Text("Connectivity"),
+        title: const Text("Connectivity"),
       ),
       body: Column(
         children: [
@@ -51,7 +51,7 @@ class _ConnectivityPlusPageState extends State<ConnectivityPlusPage> {
                   // I am connected to a wifi network.
                 }
               },
-              child: Text("Verificar conexão"))
+              child: const Text("Verificar conexão"))
         ],
       ),
     ));

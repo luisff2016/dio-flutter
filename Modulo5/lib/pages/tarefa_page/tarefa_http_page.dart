@@ -1,11 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trilhaapp/model/tarefa.dart';
-import 'package:trilhaapp/model/tarefa_hive_model.dart';
-import 'package:trilhaapp/model/tarefa_sqlite_model.dart';
 import 'package:trilhaapp/repositories/back4app/tarefas_back4app_repository.dart';
-import 'package:trilhaapp/repositories/sqlite/tarefa_sqllite_repository.dart';
-import 'package:trilhaapp/repositories/tarefa_hive_repository.dart';
-import 'package:trilhaapp/repositories/tarefa_repository.dart';
 
 import '../../model/tarefas_back4app_model.dart';
 
@@ -43,7 +37,7 @@ class _TarefaHttpPageState extends State<TarefaHttpPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Tarefas HTTP"),
+          title: const Text("Tarefas HTTP"),
         ),
         floatingActionButton: FloatingActionButton(
           child: const Icon(Icons.add),
@@ -68,6 +62,7 @@ class _TarefaHttpPageState extends State<TarefaHttpPage> {
                             await tarefaRepository.criar(
                                 TarefaBack4AppModel.criar(
                                     descricaoContoller.text, false));
+                            // ignore: use_build_context_synchronously
                             Navigator.pop(context);
                             obterTarefas();
                             setState(() {});
@@ -101,7 +96,7 @@ class _TarefaHttpPageState extends State<TarefaHttpPage> {
                 ),
               ),
               carregando
-                  ? CircularProgressIndicator()
+                  ? const CircularProgressIndicator()
                   : Expanded(
                       child: ListView.builder(
                           itemCount: _tarefasBack4App.tarefas.length,

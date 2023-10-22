@@ -19,7 +19,6 @@ class _NumerosAleatoriosSharedPreferencesPageState
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     carregarDados();
   }
@@ -43,16 +42,12 @@ class _NumerosAleatoriosSharedPreferencesPageState
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                numeroGerado == null
-                    ? "Nenhum número gerado"
-                    : numeroGerado.toString(),
-                style: TextStyle(fontSize: 22),
+                numeroGerado.toString(),
+                style: const TextStyle(fontSize: 22),
               ),
               Text(
-                quantidadeCliques == null
-                    ? "Nenhum clique efetuado"
-                    : quantidadeCliques.toString(),
-                style: TextStyle(fontSize: 22),
+                quantidadeCliques.toString(),
+                style: const TextStyle(fontSize: 22),
               )
             ],
           ),

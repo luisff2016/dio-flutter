@@ -51,6 +51,7 @@ class _TarefaSQLitePageState extends State<TarefaSQLitePage> {
                           onPressed: () async {
                             await tarefaRepository.salvar(TarefaSQLiteModel(
                                 0, descricaoContoller.text, false));
+                            // ignore: use_build_context_synchronously
                             Navigator.pop(context);
                             obterTarefas();
                             setState(() {});

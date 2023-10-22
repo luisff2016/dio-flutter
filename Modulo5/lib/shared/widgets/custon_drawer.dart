@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:trilhaapp/pages/configuracoes/configuracoes_shared_preferences_page.dart';
 import 'package:trilhaapp/pages/login_page.dart';
-import 'package:trilhaapp/pages/numeros_aleatorios/numeros_aleatorios_shared_preferences_page.dart';
 import 'package:trilhaapp/pages/posts_page.dart';
-import 'package:trilhaapp/repositories/back4app/tarefas_back4app_repository.dart';
 
 import '../../pages/characters/characters_page.dart';
 import '../../pages/configuracoes/configuracoes_hive_page.dart';
 import '../../pages/dados_cadastrais/dados_cadastrais_hive.dart';
 import '../../pages/numeros_aleatorios/numeros_aleatorios_hive_page.dart';
 import '../../pages/tarefa_page/tarefa_http_page.dart';
-import '../../repositories/marvel/marvel_repository.dart';
 
 class CustonDrawer extends StatelessWidget {
   const CustonDrawer({Key? key}) : super(key: key);
@@ -63,8 +59,8 @@ class CustonDrawer extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 width: double.infinity,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     Icon(Icons.person),
                     SizedBox(
                       width: 5,
@@ -89,8 +85,8 @@ class CustonDrawer extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 width: double.infinity,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     Icon(Icons.info),
                     SizedBox(
                       width: 5,
@@ -107,8 +103,8 @@ class CustonDrawer extends StatelessWidget {
                     return Container(
                       padding: const EdgeInsets.symmetric(
                           vertical: 16, horizontal: 12),
-                      child: Column(
-                        children: const [
+                      child: const Column(
+                        children: [
                           Text(
                             "Termos de uso e privacidade",
                             style: TextStyle(
@@ -137,8 +133,8 @@ class CustonDrawer extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 width: double.infinity,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     Icon(Icons.numbers),
                     SizedBox(
                       width: 5,
@@ -163,8 +159,8 @@ class CustonDrawer extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 width: double.infinity,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     Icon(Icons.album),
                     SizedBox(
                       width: 5,
@@ -189,8 +185,8 @@ class CustonDrawer extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 width: double.infinity,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     Icon(Icons.post_add),
                     SizedBox(
                       width: 5,
@@ -213,8 +209,8 @@ class CustonDrawer extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 width: double.infinity,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     Icon(Icons.help),
                     SizedBox(
                       width: 5,
@@ -237,8 +233,8 @@ class CustonDrawer extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 width: double.infinity,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     Icon(Icons.help),
                     SizedBox(
                       width: 5,
@@ -261,8 +257,8 @@ class CustonDrawer extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 width: double.infinity,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     Icon(Icons.exit_to_app),
                     SizedBox(
                       width: 5,
@@ -283,8 +279,8 @@ class CustonDrawer extends StatelessWidget {
                         "Meu App",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      content: Wrap(
-                        children: const [
+                      content: const Wrap(
+                        children: [
                           Text("Voce sairá do aplicativo!"),
                           Text("Deseja realmente sair do aplicativo?"),
                         ],

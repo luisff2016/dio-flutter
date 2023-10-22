@@ -3,7 +3,6 @@ import 'package:trilhaapp/model/post_model.dart';
 import 'package:trilhaapp/pages/comments_page.dart';
 import 'package:trilhaapp/repositories/posts/impl/posts_dio_repository.dart';
 
-import '../repositories/posts/impl/posts_http_repository.dart';
 import '../repositories/posts/posts_repository.dart';
 
 class PostsPage extends StatefulWidget {
@@ -34,7 +33,7 @@ class _PostsPageState extends State<PostsPage> {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
-        title: Text("Posts"),
+        title: const Text("Posts"),
       ),
       body: ListView.builder(
           itemCount: posts.length,
@@ -48,24 +47,25 @@ class _PostsPageState extends State<PostsPage> {
                         builder: (_) => CommentsPage(postId: post.id)));
               },
               child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 child: Card(
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           post.title,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 16, fontWeight: FontWeight.w700),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         Text(
                           post.body,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 14, fontWeight: FontWeight.w400),
                         ),
                       ],

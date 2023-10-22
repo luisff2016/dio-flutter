@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:trilhaapp/model/comment_model.dart';
 import 'package:trilhaapp/repositories/comments/comments_repository.dart';
 import 'package:trilhaapp/repositories/comments/impl/comments_dio_repository.dart';
-import '../repositories/comments/impl/comments_http_repository.dart';
 
 class CommentsPage extends StatefulWidget {
   final int postId;
@@ -36,16 +35,17 @@ class _CommentsPageState extends State<CommentsPage> {
         title: Text("Comentários do Post: ${widget.postId}"),
       ),
       body: Container(
-        margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-        child: comments.length == 0
-            ? Center(child: CircularProgressIndicator())
+        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        child: comments.isEmpty
+            ? const Center(child: CircularProgressIndicator())
             : ListView.builder(
                 itemCount: comments.length,
                 itemBuilder: (_, int index) {
                   var comment = comments[index];
                   return Card(
                       child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -56,7 +56,7 @@ class _CommentsPageState extends State<CommentsPage> {
                             Text(comment.email),
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         Text(comment.body),

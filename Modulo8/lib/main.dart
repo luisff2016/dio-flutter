@@ -5,19 +5,20 @@ import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'main_app.dart';
-import 'firebase_options.dart';
+// import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
+    
+
   );
   FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
 
   FirebaseMessaging messaging = FirebaseMessaging.instance;
   final fcmToken = await messaging.getToken();
 
-  NotificationSettings settings = await messaging.requestPermission(
+  await messaging.requestPermission(
     alert: true,
     announcement: false,
     badge: true,
@@ -26,6 +27,7 @@ void main() async {
     provisional: false,
     sound: true,
   );
+   
 
   FirebaseMessaging.onMessage.listen((RemoteMessage message) {
     print('Got a message whilst in the foreground!');

@@ -17,7 +17,7 @@ class _CardDetailPageState extends State<CardDetailPage> {
       child: SafeArea(
         child: Scaffold(
             body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -36,7 +36,8 @@ class _CardDetailPageState extends State<CardDetailPage> {
               ),
               Text(
                 widget.cardDetail.title,
-                style: TextStyle(fontSize: 26, fontWeight: FontWeight.w700),
+                style:
+                    const TextStyle(fontSize: 26, fontWeight: FontWeight.w700),
               ),
               const SizedBox(
                 height: 10,
@@ -44,8 +45,8 @@ class _CardDetailPageState extends State<CardDetailPage> {
               Expanded(
                 child: Text(widget.cardDetail.text,
                     textAlign: TextAlign.justify,
-                    style:
-                        TextStyle(fontSize: 16, fontWeight: FontWeight.normal)),
+                    style: const TextStyle(
+                        fontSize: 16, fontWeight: FontWeight.normal)),
               ),
             ],
           ),

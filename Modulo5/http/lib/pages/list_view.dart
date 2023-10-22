@@ -15,8 +15,8 @@ class _ListViewPageState extends State<ListViewPage> {
       children: [
         ListTile(
           leading: Image.asset(AppImages.user2),
-          title: Text("Usuário 2"),
-          subtitle: Row(
+          title: const Text("Usuário 2"),
+          subtitle: const Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text("Olá! Tudo bem?"),
@@ -29,9 +29,12 @@ class _ListViewPageState extends State<ListViewPage> {
             },
             itemBuilder: (BuildContext bc) {
               return <PopupMenuEntry<String>>[
-                PopupMenuItem<String>(value: "opcao1", child: Text("Opção 1")),
-                PopupMenuItem<String>(value: "opcao2", child: Text("Opção 2")),
-                PopupMenuItem<String>(value: "opcao3", child: Text("Opção 3")),
+                const PopupMenuItem<String>(
+                    value: "opcao1", child: Text("Opção 1")),
+                const PopupMenuItem<String>(
+                    value: "opcao2", child: Text("Opção 2")),
+                const PopupMenuItem<String>(
+                    value: "opcao3", child: Text("Opção 3")),
               ];
             },
           ),

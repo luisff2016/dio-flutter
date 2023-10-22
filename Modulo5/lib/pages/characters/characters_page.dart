@@ -10,18 +10,17 @@ class CharactersPage extends StatefulWidget {
 }
 
 class _CharactersPageState extends State<CharactersPage> {
-  ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
   late MarvelRepository marvelRepository;
   CharactersModel characters = CharactersModel();
   int offset = 0;
   var carregando = false;
   @override
   void initState() {
-    // TODO: implement initState
     _scrollController.addListener(() {
       var posicaoParaPaginar = _scrollController.position.maxScrollExtent * 0.7;
       if (_scrollController.position.pixels > posicaoParaPaginar) {
-        print("Carregando página");
+        debugPrint("Carregando página");
         carregarDados();
       }
     });
@@ -86,15 +85,13 @@ class _CharactersPageState extends State<CharactersPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Image.network(
-                          character.thumbnail!.path! +
-                              "." +
-                              character.thumbnail!.extension!,
+                          "${character.thumbnail!.path!}.${character.thumbnail!.extension!}",
                           width: 150,
                           height: 150,
                         ),
                         Expanded(
                           child: Container(
-                            margin: EdgeInsets.symmetric(
+                            margin: const EdgeInsets.symmetric(
                                 vertical: 8, horizontal: 8),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -102,7 +99,7 @@ class _CharactersPageState extends State<CharactersPage> {
                               children: [
                                 Text(
                                   character.name!,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.w600),
                                 ),
@@ -121,8 +118,8 @@ class _CharactersPageState extends State<CharactersPage> {
                   onPressed: () {
                     carregarDados();
                   },
-                  child: Text("Carregar mais itens"))
-              : CircularProgressIndicator()
+                  child: const Text("Carregar mais itens"))
+              : const CircularProgressIndicator()
         ],
       ),
     ));

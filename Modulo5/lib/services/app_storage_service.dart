@@ -1,5 +1,8 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:shared_preferences/shared_preferences.dart';
 
+// ignore: camel_case_types
 enum STORAGE_CHAVES {
   CHAVE_DADOS_CADASTRAIS_NOME,
   CHAVE_DADOS_CADASTRAIS_DATA_NASCIMENTO,

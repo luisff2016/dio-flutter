@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 
 import '../model/viacep_model.dart';
@@ -22,10 +20,10 @@ class _ConsultaCEPState extends State<ConsultaCEP> {
     return SafeArea(
         child: Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         child: Column(
           children: [
-            Text(
+            const Text(
               "Consulta de CEP",
               style: TextStyle(fontSize: 22),
             ),
@@ -34,7 +32,7 @@ class _ConsultaCEPState extends State<ConsultaCEP> {
               keyboardType: TextInputType.number,
               //maxLength: 8,
               onChanged: (String value) async {
-                var cep = value.replaceAll(new RegExp(r'[^0-9]'), '');
+                var cep = value.replaceAll(RegExp(r'[^0-9]'), '');
                 if (cep.length == 8) {
                   setState(() {
                     loading = true;
@@ -46,23 +44,23 @@ class _ConsultaCEPState extends State<ConsultaCEP> {
                 });
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             Text(
               viacepModel.logradouro ?? "",
-              style: TextStyle(fontSize: 22),
+              style: const TextStyle(fontSize: 22),
             ),
             Text(
               "${viacepModel.localidade ?? ""} - ${viacepModel.uf ?? ""}",
-              style: TextStyle(fontSize: 22),
+              style: const TextStyle(fontSize: 22),
             ),
-            if (loading) CircularProgressIndicator()
+            if (loading) const CircularProgressIndicator()
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: () async {},
       ),
     ));

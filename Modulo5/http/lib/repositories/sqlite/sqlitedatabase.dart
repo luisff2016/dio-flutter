@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
+import 'package:path/path.dart' as p;
 import 'package:sqflite/sqflite.dart';
-import 'package:path/path.dart' as path;
 
 Map<int, String> scripts = {
   1: ''' CREATE TABLE tarefas (
@@ -22,8 +23,7 @@ class SQLiteDataBase {
   }
 
   Future<Database> iniciarBancoDeDados() async {
-    var db = await openDatabase(
-        path.join(await getDatabasesPath(), 'database.db'),
+    var db = await openDatabase(p.join(await getDatabasesPath(), 'database.db'),
         version: scripts.length, onCreate: (Database db, int version) async {
       for (var i = 1; i <= scripts.length; i++) {
         await db.execute(scripts[i]!);

@@ -1,8 +1,5 @@
-import 'dart:convert';
-
 import 'package:trilhaapp/model/post_model.dart';
 import 'package:trilhaapp/repositories/posts/posts_repository.dart';
-import 'package:dio/dio.dart';
 
 import '../../jsonplaceholder_custon_dio.dart';
 

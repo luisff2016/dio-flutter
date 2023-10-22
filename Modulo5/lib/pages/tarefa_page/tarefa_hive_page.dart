@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:trilhaapp/model/tarefa.dart';
 import 'package:trilhaapp/model/tarefa_hive_model.dart';
 import 'package:trilhaapp/repositories/tarefa_hive_repository.dart';
-import 'package:trilhaapp/repositories/tarefa_repository.dart';
 
 class TarefaPage extends StatefulWidget {
   const TarefaPage({Key? key}) : super(key: key);
@@ -54,6 +52,7 @@ class _TarefaPageState extends State<TarefaPage> {
                           onPressed: () async {
                             await tarefaRepository.salvar(TarefaHiveModel.criar(
                                 descricaoContoller.text, false));
+                            // ignore: use_build_context_synchronously
                             Navigator.pop(context);
                             obterTarefas();
                             setState(() {});

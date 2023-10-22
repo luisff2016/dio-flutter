@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.daniloperez.trilhaapp.trilhaapp">
+    package="com.lff.trilhaapp">
    <application
         android:label="Pacotes"
         android:name="${applicationName}"

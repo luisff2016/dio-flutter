@@ -2,7 +2,6 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-import 'package:trilhaapp/services/app_storage_service.dart';
 
 class NumerosAleatoriosHivePage extends StatefulWidget {
   const NumerosAleatoriosHivePage({Key? key}) : super(key: key);
@@ -19,7 +18,6 @@ class _NumerosAleatoriosHivePageState extends State<NumerosAleatoriosHivePage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     carregarDados();
   }
@@ -48,16 +46,12 @@ class _NumerosAleatoriosHivePageState extends State<NumerosAleatoriosHivePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                numeroGerado == null
-                    ? "Nenhum número gerado"
-                    : numeroGerado.toString(),
-                style: TextStyle(fontSize: 22),
+                numeroGerado.toString(),
+                style: const TextStyle(fontSize: 22),
               ),
               Text(
-                quantidadeCliques == null
-                    ? "Nenhum clique efetuado"
-                    : quantidadeCliques.toString(),
-                style: TextStyle(fontSize: 22),
+                quantidadeCliques.toString(),
+                style: const TextStyle(fontSize: 22),
               )
             ],
           ),

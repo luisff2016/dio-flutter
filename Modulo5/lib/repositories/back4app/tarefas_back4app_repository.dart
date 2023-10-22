@@ -1,5 +1,3 @@
-import 'package:dio/dio.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:trilhaapp/model/tarefas_back4app_model.dart';
 
 import 'back4app_custon_dio.dart';
@@ -23,27 +21,26 @@ class TarefasBack4AppRepositoy {
       await _custonDio.dio
           .post("/Tarefas", data: tarefaBack4AppModel.toJsonEndpoint());
     } catch (e) {
-      throw e;
+      rethrow;
     }
   }
 
   Future<void> atualizar(TarefaBack4AppModel tarefaBack4AppModel) async {
     try {
-      var response = await _custonDio.dio.put(
-          "/Tarefas/${tarefaBack4AppModel.objectId}",
-          data: tarefaBack4AppModel.toJsonEndpoint());
+      //  var response = await _custonDio.dio.put(
+      //    "/Tarefas/${tarefaBack4AppModel.objectId}",
+      //  data: tarefaBack4AppModel.toJsonEndpoint());
     } catch (e) {
-      throw e;
+      rethrow;
     }
   }
 
   Future<void> remover(String objectId) async {
     try {
-      var response = await _custonDio.dio.delete(
-        "/Tarefas/$objectId",
-      );
+      //    var response = await _custonDio.dio.delete(
+      //    "/Tarefas/$objectId",      );
     } catch (e) {
-      throw e;
+      rethrow;
     }
   }
 }
